@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="./output.css" rel="stylesheet">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body class="pt-6 md:pt-0 bg-[#c5e4e7] flex flex-col justify-center items-center md:h-screen font-mono">
+  <div class="py-6 md:py-3 text-xl text-[#00494d] font-bold">
+    <h1 class="tracking-extra-wide">SPLI</h1>
+    <h1 class="tracking-extra-wide">TTER</h1>
+  </div>
+
+  <div class="bg-white grid md:grid-cols-2  gap-6 px-6 py-5 rounded-3xl md:rounded-2xl">
+    <div class="text-[#00494d]">
+      <p class="py-2 text-[#00494d] font-semibold">Bill</p>
+      <div class="rounded-lg outline-none border-[#26c0ab] active:border-[#26c0ab] focus-within:border-2 p-2 bg-[#c5e4e7] w-80 flex">
+        <span class="text-[#00494d] font-semibold">$</span>
+        <input type="text" placeholder="0" class="outline-none text-right placeholder:text-[#00494d] bg-[#c5e4e7] flex-1">
+      </div>
+
+      <div class="mt-10">
+        <p class="py-2 text-[#00494d] font-semibold">Select tip %</p>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+          <button class="text-2xl font-semibold cursor-pointer bg-[#00494d] hover:bg-[#c5e4e7] md:w-28 py-2 rounded-lg">5%</button>
+          <button class="text-2xl font-semibold cursor-pointer bg-[#00494d] hover:bg-[#c5e4e7] md:w-28 py-2 rounded-lg">10%</button>
+          <button class="text-2xl font-semibold cursor-pointer bg-[#00494d] hover:bg-[#c5e4e7] md:w-28 py-2 rounded-lg">15%</button>
+          <button class="text-2xl font-semibold cursor-pointer bg-[#00494d] hover:bg-[#c5e4e7] md:w-28 py-2 rounded-lg">25%</button>
+          <button class="text-2xl font-semibold cursor-pointer bg-[#00494d] hover:bg-[#c5e4e7] md:w-28 py-2 rounded-lg">50%</button>
+          <input type="text" placeholder="Custom" class="placeholder:px-1 placeholder:text-center focus-within:border-2 border-[#26c0ab] outline-none text-right text-xl font-semibold cursor-pointer bg-[#c5e4e7] md:w-28 py-2 rounded-lg">
+        </div>
+      </div>
+
+      <div class="mt-10">
+        <p class="py-2 text-[#00494d] font-semibold">Number of People</p>         
+        <div class="rounded-lg items-center outline-none border-[#26c0ab] active:border-[#26c0ab] focus-within:border-2 p-2 bg-[#c5e4e7] w-80 flex">
+          <span><img src="/images/icon-person.svg" alt=""></span>
+          <input type="text" placeholder="0" class="outline-none text-right placeholder:text-[#00494d] bg-[#c5e4e7] flex-1">
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="bg-[#00494d] rounded-xl p-7 ">
+      <div class="flex justify-between">
+        <div class="">
+          <p class="text-white font-semibold text-lg">Tip Amount</p>
+          <p class="text-[#c5e4e7] text-sm font-bold">/ person</p>
+        </div>
+
+        <div id="">
+          <p class="text-[#7f9c9f] font-bold text-4xl">$0.00</p>
+        </div>
+      </div>
+      <div class="flex justify-between mt-8">
+        <div class="">
+          <p class="text-white font-semibold text-lg">Total</p>
+          <p class="text-[#c5e4e7] text-sm font-bold">/ person</p>
+        </div>
+
+        <div id="">
+          <p class="text-[#7f9c9f] font-bold text-4xl">$0.00</p>
+        </div>
+      </div>
+      <div class="mt-10 md:mt-36 rounded-xl justify-center flex bg-[#c5e4e7]">
+        <button class="text-[#5e7a7d] py-2 font-bold text-2xl text-center">Reset</button>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>
