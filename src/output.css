@@ -574,6 +574,14 @@ video {
   width: 20rem;
 }
 
+.w-96 {
+  width: 24rem;
+}
+
+.w-\[100\%\] {
+  width: 100%;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -640,6 +648,11 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#26c0ab\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(38 192 171 / var(--tw-bg-opacity));
 }
 
 .p-2 {
@@ -719,10 +732,6 @@ video {
   font-weight: 600;
 }
 
-.tracking-widest {
-  letter-spacing: 0.1em;
-}
-
 .tracking-extra-wide {
   letter-spacing: 0.3em;
 }
@@ -750,6 +759,34 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-\[\#26c0ab\] {
+  --tw-text-opacity: 1;
+  color: rgb(38 192 171 / var(--tw-text-opacity));
+}
+
+.text-red-300 {
+  --tw-text-opacity: 1;
+  color: rgb(252 165 165 / var(--tw-text-opacity));
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+.text-\[\] {
+  color: ;
+}
+
+.text-\[\#00494\] {
+  color: #00494;
+}
+
+.text-\[\#0a2223\] {
+  --tw-text-opacity: 1;
+  color: rgb(10 34 35 / var(--tw-text-opacity));
 }
 
 .outline-none {
@@ -781,6 +818,16 @@ video {
   text-align: center;
 }
 
+.placeholder\:text-2xl::-moz-placeholder {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.placeholder\:text-2xl::placeholder {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .placeholder\:text-\[\#00494d\]::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(0 73 77 / var(--tw-text-opacity));
@@ -795,9 +842,32 @@ video {
   border-width: 2px;
 }
 
+.focus-within\:border-4:focus-within {
+  border-width: 4px;
+}
+
+.focus-within\:border-\[3px\]:focus-within {
+  border-width: 3px;
+}
+
 .hover\:bg-\[\#c5e4e7\]:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(197 228 231 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#26c0ab\]:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(38 192 171 / var(--tw-bg-opacity));
+}
+
+.hover\:text-\[\#00494d\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(0 73 77 / var(--tw-text-opacity));
+}
+
+.hover\:text-\[\#26c0ab\]:hover {
+  --tw-text-opacity: 1;
+  color: rgb(38 192 171 / var(--tw-text-opacity));
 }
 
 .active\:border-\[\#26c0ab\]:active {
@@ -806,8 +876,16 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
   .md\:mt-36 {
     margin-top: 9rem;
+  }
+
+  .md\:mt-44 {
+    margin-top: 11rem;
   }
 
   .md\:h-screen {

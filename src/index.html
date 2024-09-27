@@ -16,7 +16,7 @@
   </style>
 </head>
 <body class="pt-6 md:pt-0 bg-[#c5e4e7] flex flex-col justify-center items-center md:h-screen font-mono">
-  <div class="py-6 md:py-3 text-xl text-[#00494d] font-bold">
+  <div class="py-6 md:py-3 text-xl text-[#26c0ab] font-bold">
     <h1 class="tracking-extra-wide">SPLI</h1>
     <h1 class="tracking-extra-wide">TTER</h1>
   </div>
@@ -24,28 +24,31 @@
   <div class="bg-white grid md:grid-cols-2  gap-6 px-6 py-5 rounded-3xl md:rounded-2xl">
     <div class="text-[#00494d]">
       <p class="py-2 text-[#00494d] font-semibold">Bill</p>
-      <div class="rounded-lg outline-none border-[#26c0ab] active:border-[#26c0ab] focus-within:border-2 p-2 bg-[#c5e4e7] w-80 flex">
-        <span class="text-[#00494d] font-semibold">$</span>
-        <input type="text" placeholder="0" class="outline-none text-right placeholder:text-[#00494d] bg-[#c5e4e7] flex-1">
+      <div class="rounded-lg outline-none border-[#26c0ab] active:border-[#26c0ab] focus-within:border-[3px] p-2 bg-[#c5e4e7] w-[100%] flex">
+        <span class="text-[#00494d] text-2xl font-bold">$</span>
+        <input type="number" oninput="calculateTip()" placeholder="0" id="userBill" class="outline-none text-right text-2xl font-bold  text-[#00494d] placeholder:text-[#00494d] bg-[#c5e4e7] flex-1">
       </div>
 
       <div class="mt-10">
         <p class="py-2 text-[#00494d] font-semibold">Select tip %</p>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-          <button class="text-2xl font-semibold cursor-pointer bg-[#00494d] hover:bg-[#c5e4e7] md:w-28 py-2 rounded-lg">5%</button>
-          <button class="text-2xl font-semibold cursor-pointer bg-[#00494d] hover:bg-[#c5e4e7] md:w-28 py-2 rounded-lg">10%</button>
-          <button class="text-2xl font-semibold cursor-pointer bg-[#00494d] hover:bg-[#c5e4e7] md:w-28 py-2 rounded-lg">15%</button>
-          <button class="text-2xl font-semibold cursor-pointer bg-[#00494d] hover:bg-[#c5e4e7] md:w-28 py-2 rounded-lg">25%</button>
-          <button class="text-2xl font-semibold cursor-pointer bg-[#00494d] hover:bg-[#c5e4e7] md:w-28 py-2 rounded-lg">50%</button>
-          <input type="text" placeholder="Custom" class="placeholder:px-1 placeholder:text-center focus-within:border-2 border-[#26c0ab] outline-none text-right text-xl font-semibold cursor-pointer bg-[#c5e4e7] md:w-28 py-2 rounded-lg">
+          <button onclick="selectTip(5)" class="text-2xl font-semibold cursor-pointer bg-[#00494d] hover:bg-[#26c0ab] md:w-28 py-2 text-white hover:text-[#00494d] rounded-lg">5%</button>
+          <button onclick="selectTip(10)" class="text-2xl font-semibold cursor-pointer bg-[#00494d] hover:bg-[#26c0ab] md:w-28 py-2 text-white hover:text-[#00494d] rounded-lg">10%</button>
+          <button onclick="selectTip(15)" class="text-2xl font-semibold cursor-pointer bg-[#00494d] hover:bg-[#26c0ab] md:w-28 py-2 text-white hover:text-[#00494d] rounded-lg">15%</button>
+          <button onclick="selectTip(25)" class="text-2xl font-semibold cursor-pointer bg-[#00494d] hover:bg-[#26c0ab] md:w-28 py-2 text-white hover:text-[#00494d] rounded-lg">25%</button>
+          <button onclick="selectTip(50)" class="text-2xl font-semibold cursor-pointer bg-[#00494d] hover:bg-[#26c0ab] md:w-28 py-2 text-white hover:text-[#00494d] rounded-lg">50%</button>
+          <input type="number" id="customTip" placeholder="Custom" class="placeholder:px-1 placeholder:text-center focus-within:border-[3px] text-[#00494d] border-[#26c0ab] outline-none text-right text-2xl font-bold cursor-pointer bg-[#c5e4e7] md:w-28 py-2 rounded-lg">
         </div>
       </div>
 
       <div class="mt-10">
-        <p class="py-2 text-[#00494d] font-semibold">Number of People</p>         
-        <div class="rounded-lg items-center outline-none border-[#26c0ab] active:border-[#26c0ab] focus-within:border-2 p-2 bg-[#c5e4e7] w-80 flex">
+        <div class="flex justify-between items-center">
+          <p class="py-2 text-[#00494d] font-semibold">Number of People</p>         
+          <p id="error" class="text-red-500"></p>
+        </div>
+        <div class="rounded-lg items-center outline-none border-[#26c0ab] active:border-[#26c0ab] focus-within:border-[3px] p-2 bg-[#c5e4e7] w-[100%] flex">
           <span><img src="/images/icon-person.svg" alt=""></span>
-          <input type="text" placeholder="0" class="outline-none text-right placeholder:text-[#00494d] bg-[#c5e4e7] flex-1">
+          <input type="number" oninput="calculateTip()" placeholder="0" id="peopleNum" class="outline-none text-right text-2xl font-bold text-[#00494d] placeholder:text-[#00494d] bg-[#c5e4e7] flex-1">
         </div>
       </div>
     </div>
@@ -61,7 +64,7 @@
         </div>
 
         <div id="">
-          <p class="text-[#7f9c9f] font-bold text-4xl">$0.00</p>
+          <p id="tipPerPerson" class="text-[#26c0ab] font-bold text-4xl">$0.00</p>
         </div>
       </div>
       <div class="flex justify-between mt-8">
@@ -71,19 +74,20 @@
         </div>
 
         <div id="">
-          <p class="text-[#7f9c9f] font-bold text-4xl">$0.00</p>
+          <p id="totalPerPerson" class="text-[#26c0ab] font-bold text-4xl">$0.00</p>
         </div>
       </div>
-      <div class="mt-10 md:mt-36 rounded-xl justify-center flex bg-[#c5e4e7]">
-        <button class="text-[#5e7a7d] py-2 font-bold text-2xl text-center">Reset</button>
+      <div class="mt-10 md:mt-44 rounded-xl justify-center flex bg-[#26c0ab]">
+        <button class="text-[#5e7a7d] py-2 font-bold text-2xl text-center" onclick="resetCalculator()">Reset</button>
       </div>
     </div>
+
   </div>
-  
-  
-  <div class="attribution">
+  <div class="attribution items-center md:col-span-2">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="github/Anaspropro">Webwiz</a>.
   </div>
+  
+  <script src="script.js"></script>
 </body>
 </html>
